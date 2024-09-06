@@ -295,7 +295,12 @@ const handlePlantsClick = (e) => {
                                 <img className="product-image" src={plant.image} alt={plant.name} />
                                 <div className="product-title">{plant.name}</div>
                                 {/*Similarly like the above plant.name show other details like description and cost*/}
-                                <button  className="product-button" onClick={() => handleAddToCart(plant)}>Add to Cart</button>
+                
+                                { Object.keys(addedToCart).includes(plant.name) ? 
+                                <button  disabled >Added to Cart</button> : 
+                                <button  className="product-button" onClick={() => handleAddToCart(plant)}>Add to Cart</button> 
+                                
+                                }
                             </div>
                             ))}
                         </div>
